@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #middle {
+            margin: 0 auto;
+            width: 800px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #map {
+            width: 800px;
+            height: 300px;
+            background-color: #333;
+            margin: 30px auto;
+            position: relative;
+            /*overflow: hidden;*/
+
+        }
+        #map div {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="middle">
+    <h1>彩虹贪吃蛇</h1>
+    <input type="button" value="开始">
+    <input type="button" value="停止">
+    <input type="button" value="重新开始">
+    <input type="button" value="简单">
+    <input type="button" value="中等">
+    <input type="button" value="困难">
+    <input type="button" value="加速">
+    <span>(亲在开始之前选择好游戏难度哦 在集齐所有颜色后才会通关)</span>
+
+    <div id="map">
+
+    </div>
+</div>
+
+<script src="js/food.js"></script>
+<script src="js/snake.js"></script>
+<script src="js/game.js"></script>
+<script>
+    var map = document.getElementById('map');
+    var inputs = document.querySelectorAll('input');
+    var game = new Game(map, inputs);
+    game.start();
+</script>
+</body>
+</html>
